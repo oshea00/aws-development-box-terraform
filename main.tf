@@ -15,15 +15,27 @@ resource "aws_instance" "ubuntu" {
 
   connection {
     type = "ssh"
-    user = var.dev_name
+    user = "ubuntu"
     private_key = file(var.private_key_path)
-    host = self.public_ip
+    host = self.private_ip
   }
 
   ebs_block_device {
     device_name = "/dev/sda1"
     volume_type = "gp2"
     volume_size = 8
+  }
+
+  provisioner "file" {
+    source = "./setup.sh"
+    destination = "/tmp/setup.sh"
+  }
+
+  provisioner "remote-exec" {
+    inline = [
+      "chmod +x /tmp/setup.sh",
+      "/tmp/setup.sh",
+    ]
   }
 }
 
