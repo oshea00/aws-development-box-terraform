@@ -21,7 +21,7 @@ variable "subnet_id" {
 
 variable "dev_name" {
     type = string
-    description = "Name of developer deploying this instance"
+    description = "Name of developer (nospaces) deploying this instance"
 }
 
 variable "public_key_path" {

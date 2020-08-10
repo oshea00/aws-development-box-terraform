@@ -1,4 +1,3 @@
-
 sudo apt update
 
 # Docker prerequisites
@@ -15,4 +14,3 @@ sudo apt -y install docker-ce docker-ce-cli containerd.io
 sudo groupadd docker
 sudo usermode -aG docker $USER
 newgrp docker
-

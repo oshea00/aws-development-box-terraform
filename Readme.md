@@ -7,5 +7,5 @@ Make sure your public and private keys are in the default path or fix the defaul
 
 The default username of the instance is ubuntu, so you should ssh like this:
 
-`ssh -i ~/.ssh/id_rsa ubuntu@[INSTANCE_IP] `
+`ssh ubuntu@[INSTANCE_IP] `
 
