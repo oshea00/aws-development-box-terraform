@@ -1,7 +1,19 @@
-provider "aws" {
-  profile = "default"
-  region = var.aws_region
+#
+# Outputs
+#
+
+output "instance_ip_address" {
+  value = aws_instance.ubuntu.private_ip
 }
+
+# NOTE: First step towards a model where we can re-use the EBS volume
+output "ebs_volume_id" {
+  value = aws_instance.ubuntu.ebs_block_device[*].volume_id
+}
+
+#
+# Resources
+#
 
 resource "aws_iam_role" "ec2_role" {
   name = "ppacore-devbox-${var.dev_name}-ec2-role"
@@ -73,13 +85,12 @@ resource "aws_instance" "ubuntu" {
   ebs_block_device {
     device_name = "/dev/sda1"
     volume_type = "gp2"
-    volume_size = 8
+    volume_size = var.ebs_volume_size
   }
 
   provisioner "remote-exec" {
     inline = [
       "sudo apt-get update -y > /dev/null 2>&1",
-      "sleep 5",
       "sudo apt-get install awscli -y > /dev/null 2>&1",
       "curl -sL https://deb.nodesource.com/setup_12.x | sudo -E bash -",
       "sudo apt-get install nodejs -y > /dev/null 2>&1",
@@ -108,7 +119,7 @@ resource "aws_key_pair" "ubuntu" {
   public_key = file(var.public_key_path)
 }
 
-output "instance_ip_address" {
-  value = aws_instance.ubuntu.private_ip
+provider "aws" {
+  profile = "default"
+  region = var.aws_region
 }
-

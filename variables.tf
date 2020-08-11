@@ -24,6 +24,12 @@ variable "dev_name" {
     description = "Name of developer (nospaces) deploying this instance"
 }
 
+# REVIEW: Perhaps the entire EBS config should be a variable?
+variable "ebs_volume_size" {
+    # GB
+    default = 50
+}
+
 variable "public_key_path" {
     default = "~/.ssh/id_rsa.pub"
 }
