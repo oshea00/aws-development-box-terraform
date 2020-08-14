@@ -109,7 +109,8 @@ resource "aws_instance" "ubuntu" {
       "sudo dpkg -i packages-microsoft-prod.deb",
       "sudo apt-get update",
       "sudo apt-get install -y apt-transport-https && sudo apt-get update && sudo apt-get install -y dotnet-sdk-3.1",
-      "rm -f packages-microsoft-prod.deb"
+      "rm -f packages-microsoft-prod.deb",
+      "sudo npm install -g @aws-amplify/cli"
     ]
   }
 }
