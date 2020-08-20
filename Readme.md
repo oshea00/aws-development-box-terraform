@@ -38,7 +38,7 @@ This terraform spins up a developer EC2 Ubuntu 18.04 instance with the following
 You may setup VSCode remote development, allowing you to easily code and debug remotely:
 1. Ctrl-Shift-P - choose `Remote-SSH: Add new SSH host`
 2. Enter your ssh command. Example: `ssh -i C:\Users\you\.ssh\id_rsa ubuntu@[INSTANCE_IP]`
-3. Choose where to save config (usually c:\Users\you\.ssh\config)
+3. Choose where to save config (usually `c:\Users\you\.ssh\config`)
 4. Ctrl-Shift-P - choose `Remote-SSH: Connect to Host`
 5. Once connected you can choose to open folders, start a terminal session, etc - it's VCCode.
 
