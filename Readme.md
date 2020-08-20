@@ -40,7 +40,7 @@ You may setup VSCode remote development, allowing you to easily code and debug r
 2. Enter your ssh command. Example: `ssh -i C:\Users\you\.ssh\id_rsa ubuntu@[INSTANCE_IP]`
 3. Choose where to save config (usually `c:\Users\you\.ssh\config`)
 4. Ctrl-Shift-P - choose `Remote-SSH: Connect to Host`
-5. Once connected you can choose to open folders, start a terminal session, etc - it's VCCode.
+5. Once connected you can choose to open folders, start a terminal session, etc - it's VSCode.
 
 ### Changing
 The ECS instance role and policies are setup unique to your developer username (as entered during setup). You may change these in the `main.tf` as-needed - warning: this will completely re-build your instance. The current policy gives your EC2 instance all the permission you have in your developer account.
