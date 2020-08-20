@@ -5,6 +5,7 @@ Although the WSL environment works for AWS development, there are some issues:
 * The WSL environment is slow.
 * There are problems installing the right bits needed on the WSL Ubuntu - especially node.
 * No backups in case something becomes corrupted.
+* No docker in WSL
 
 ### What's Here
 This terraform spins up a developer EC2 Ubuntu 18.04 instance with the following tools pre-installed.
