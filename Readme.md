@@ -14,6 +14,7 @@ This terraform spins up a developer EC2 Ubuntu 18.04 instance with the following
 * Node 12.x - includes npm
 * Python 2/3 (default Ubuntu 18.04)
 * Serverless.com tools
+* Amplify CLI
 * Dotnet 3.1 SDK
 * Docker w/ default user 'ubuntu' added to docker group.
 
